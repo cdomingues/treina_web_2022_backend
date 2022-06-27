@@ -12,7 +12,7 @@ class AdocaoController extends Controller
     {
         $request->validate([
             "email"=>['required','email'],
-            "valor"=>['required','numeric','between:10,100'],
+            "valor"=>['required','numeric','between:10,200'],
             "pet_id"=>['required','int','exists:pets,id']
         ]);
         $dadosAdocao = $request->all();
@@ -20,3 +20,4 @@ class AdocaoController extends Controller
         return Adocao::create($dadosAdocao);
     }
 }
+
